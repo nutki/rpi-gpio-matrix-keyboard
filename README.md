@@ -1,5 +1,8 @@
 # Raspberry Pi GPIO Matrix Keyboard
-User space GPIO matrix keyboard driver for Raspbery Pi. The code is designed for Commodore Plus/4 keyboard layout, but can be easily modifed to support other 80s and 90s computers' keyboards (Commodore 64, 8-bit Atari, Amiga, etc.)
+User space GPIO matrix keyboard driver for Raspbery Pi. Can be used to put Raspberry Pi into an old computer case with a functional keyboard
+without any extra hardware like Arduino or Keyrah.
+
+The code is designed for Commodore Plus/4 keyboard layout, but can be easily modifed to support other 80s and 90s computers' keyboards (Commodore 64, 8-bit Atari, Amiga, etc.)
 
 ## Compilation
 ```
@@ -13,7 +16,7 @@ sudo cmake install
 ```
 ## Commodore Plus/4 Wiring
 This is the wiring used to define the `cols`, `rows`, and `keymap`. Additionally the LED pins can be connected to a free GPIO and GND for extra functionality (or simply +5v).
-![Plus/4 Keyboard Matrix](cplus4_keyboard_matrix.png?raw=true "Plus/4 Keyboard Matrix")
+![Plus/4 Keyboard Matrix](img/cplus4_keyboard_matrix.png?raw=true "Plus/4 Keyboard Matrix")
 
 | Plus/4 Pin | Pi GPIO Pin | GPIO No. | Matrix map |
 |-----------:|------------:|---------:|-----------:|
