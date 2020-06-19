@@ -4,6 +4,8 @@ without any extra hardware like Arduino or Keyrah.
 
 The code is designed for Commodore Plus/4 keyboard layout, but can be easily modifed to support other 80s and 90s computers' keyboards (Commodore 64, 8-bit Atari, Amiga, etc.)
 
+![Commodore Plus/4](img/cplus4.jpg?raw=true "Commodore Plus/4")
+
 ## Compilation
 ```
 cmake .
@@ -38,6 +40,8 @@ This is the wiring used to define the `cols`, `rows`, and `keymap`. Additionally
 |          16|           23|        11|    Col 8   |
 |          17|           24|         8|    Col 1   |
 |          18|           26|         7|    Row 8   |
+
+![Wiring to Raspberry Pi](img/cplus4_wiring.jpg?raw=true "Wiring to Raspberry Pi")
 
 ## Python Prototype
 The Python script `gpio_keyboard.py` is my initial version of this driver. It has basically the same funcitonality except:
