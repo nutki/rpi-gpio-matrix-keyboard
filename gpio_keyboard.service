@@ -1,0 +1,13 @@
+[Unit]
+Description=Commodore Pi/4 Keyboard Service
+
+[Service]
+ExecStart=/usr/local/bin/gpio_keyboard
+WorkingDirectory=/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

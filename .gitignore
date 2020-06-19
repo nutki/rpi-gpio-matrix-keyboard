@@ -1,0 +1,8 @@
+CMakeFiles
+CMakeCache.txt
+Makefile
+build
+cmake_install.cmake
+install_manifest.txt
+.vscode
+gpio_keyboard
