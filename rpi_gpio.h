@@ -47,17 +47,17 @@ static inline int read3(int reg, int gpio) {
 }
 static inline void write1(int reg, int gpio, int val) {
     uint32_t bit = 1 << gpio;
-    if (val & 1) gpio_map[reg] |= bit; else gpio_map[reg] &= bit;
+    if (val & 1) gpio_map[reg] |= bit; else gpio_map[reg] &= ~bit;
 }
 static inline void write2(int reg, int gpio, int val) {
     uint32_t bit = gpio % 16 * 2;
     reg += gpio / 16;
-    gpio_map[reg] = gpio_map[reg] & (~3 << bit) | ((val & 3) << bit);
+    gpio_map[reg] = gpio_map[reg] & ~(3 << bit) | ((val & 3) << bit);
 }
 static inline void write3(int reg, int gpio, int val) {
     uint32_t bit = gpio % 10 * 3;
     reg += gpio / 10;
-    gpio_map[reg] = gpio_map[reg] & (~7 << bit) | ((val & 7) << bit);
+    gpio_map[reg] = gpio_map[reg] & ~(7 << bit) | ((val & 7) << bit);
 }
 
 static inline int rpi_gpio_init(void) {
@@ -100,7 +100,7 @@ static inline int rpi_gpio_get_fn(int gpio) {
 }
 
 static inline void rpi_gpio_output(int gpio, int value) {
-    write1(value ? SET_OFFSET : CLR_OFFSET, gpio, 1);
+    gpio_map[value ? SET_OFFSET : CLR_OFFSET] = 1 << gpio;
 }
 
 void rpi_gpio_output_all(uint32_t mask, int value) {
